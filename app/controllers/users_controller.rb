@@ -19,10 +19,12 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user = User.find(params[:id])
+
     if @user.update(user_params)
       render json:@user
     else
-      format.json { render json: @user.errors, status: :unprocessable_entity }
+      render json: { error: {code: 404, message: 'Invalid user' }}, status: :not_found
     end
   end
 
@@ -62,6 +64,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit( :email, :name, :phone_number, :description, :zip_code, :profile_pic)
+      params.require(:user).permit(:email, :name, :phone_number, :description, :zip_code, :profile_pic)
     end
 end
