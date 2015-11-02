@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102203444) do
+ActiveRecord::Schema.define(version: 20151102204113) do
 
   create_table "crop_types", force: :cascade do |t|
     t.string   "crop_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "crops", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "crop_type_id"
+    t.text     "description"
+    t.integer  "weight"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
