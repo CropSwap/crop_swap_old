@@ -32,6 +32,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'httparty'
 
 gem 'paperclip', '~> 4.2'
+gem 'aws-sdk', '~> 1.6'
 
 gem 'devise'
 # Use Unicorn as the app server
