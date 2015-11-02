@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     else
       render json: {error: {code: 500, message: "Could not save user", server_message: @user.errors}}, status: :internal_server_error
     end
+
   end
 
   # PATCH/PUT /users/1
