@@ -12,3 +12,8 @@
 #     phone_number = Faker::PhoneNumber.phone_number,
 #     description = Faker::Lorem.sentence, zip_code = Faker::Address.zip_code)
 # end
+
+User.create!(email: "ruti@mail.com")
+User.create!(email: "eric@mail.com")
+User.create!(email: "mason@mail.com")
+User.create!(email: "kelly@mail.com")

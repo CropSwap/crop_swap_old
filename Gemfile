@@ -30,7 +30,6 @@ gem 'faker'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'httparty'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
