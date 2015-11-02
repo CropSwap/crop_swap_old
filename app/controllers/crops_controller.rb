@@ -8,7 +8,7 @@ class CropsController < ApplicationController
 
       if @crop.save
         render json:@crop
-      else @crop.errors
+      elsif @crop.errors
         render json: {error: {code: 400, server_message: @crop.errors}}, status: :bad_request
       else
         render json: {error: {code: 500, message: "Could not save crop", server_message: @crop.errors}}, status: :internal_server_error
