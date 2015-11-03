@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
 
-  def new
-  end
-
   def create
     u = User.find_by_email(params[:email])
     if u && u.authenticate(params[:password])
