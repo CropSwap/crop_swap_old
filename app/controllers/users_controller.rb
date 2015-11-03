@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
       format.json { head :no_content }
-    # @user.token = nil 
+    # @user.token = nil
   end
 
   # GET /users/1
