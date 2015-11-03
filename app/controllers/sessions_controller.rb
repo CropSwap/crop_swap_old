@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   def create
     u = User.find_by_email(params[:email])
     if u && u.authenticate(params[:password])
-        u.@token = Token.new
+      @token = Token.new
+      u.tokens << @token
       if u.save
         @user = u
         render u
@@ -16,9 +17,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    u = User.find(params[:access_token])#(access_token: request.headers["user-token"])
+    u = User.find(params[:access_token]) #write class method on user that will look up user with certain token
     if u
-      u.@token = nil
+      @token = nil #instead, destroy this token row in the database
       u.save
       @user = nil
     else
