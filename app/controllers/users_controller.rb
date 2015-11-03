@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      @user.token = SecureRandom.hex
+      # @user.token = SecureRandom.hex
       render json:@user
     elsif @user.errors
       render json: {error: {code: 400, server_message: @user.errors}}, status: :bad_request
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
       format.json { head :no_content }
-    @user.token = nil 
+    # @user.token = nil 
   end
 
   # GET /users/1

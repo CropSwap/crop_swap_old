@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     u = User.find_by_email(params[:email])
     if u && u.authenticate(params[:password])
-        u.token = SecureRandom.hex
+        @token = Token.new
       if u.save
         @user = u
         render u
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   def destroy
     u = User.find(token: request.headers["user-token"])
     if u
-      u.token = nil
+      @token = nil
       u.save
       @user = nil
     else
