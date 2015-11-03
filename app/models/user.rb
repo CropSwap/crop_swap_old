@@ -12,5 +12,8 @@ class User < ActiveRecord::Base
   }
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
 
+  def number_of_crops
+    self.crops.count
+  end
 
 end
