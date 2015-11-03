@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       u.tokens << @token
       if u.save
         @user = u
-        render u
+        render json:@user
       else
         render json: { error: {code: 500, message: "Could not save user"}}, status: :internal_server_error
       end
@@ -17,9 +17,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    u = User.find(params[:access_token]) #write class method on user that will look up user with certain token
+    u = User.check_for_token 
     if u
-      @token.destroy 
+      @token.destroy
       u.save
       @user = nil
     else
