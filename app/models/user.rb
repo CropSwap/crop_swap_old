@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   has_secure_password
-  
   validates :email, presence: true
+
   has_many :crops
+  has_many :tokens
 
   has_attached_file :profile_pic, styles: {
     thumb: '100x100>',
@@ -10,4 +11,6 @@ class User < ActiveRecord::Base
     medium: '300x300>'
   }
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
+
+
 end
