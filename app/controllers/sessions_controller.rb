@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     u = User.find(params[:access_token]) #write class method on user that will look up user with certain token
     if u
-      @token = nil #instead, destroy this token row in the database
+      @token.destroy 
       u.save
       @user = nil
     else
