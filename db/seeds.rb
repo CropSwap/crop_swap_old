@@ -13,10 +13,10 @@
 #     description = Faker::Lorem.sentence, zip_code = Faker::Address.zip_code)
 # end
 
-User.create!(email: "ruti@mail.com")
-User.create!(email: "eric@mail.com")
-User.create!(email: "mason@mail.com")
-User.create!(email: "kelly@mail.com")
+User.create!(email: "ruti@mail.com", password: "password")
+User.create!(email: "eric@mail.com", password: "password")
+User.create!(email: "mason@mail.com", password: "password")
+User.create!(email: "kelly@mail.com", password: "password")
 
 CropType.create!(crop_type: "potato")
 CropType.create!(crop_type: "tomato")
