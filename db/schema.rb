@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103134846) do
+ActiveRecord::Schema.define(version: 20151103142845) do
 
   create_table "crop_types", force: :cascade do |t|
     t.string   "crop_type"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20151103134846) do
     t.string   "profile_pic_content_type"
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
+    t.string   "password_digest"
   end
 
 end

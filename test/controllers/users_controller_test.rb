@@ -6,17 +6,20 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    request.accept = "application/json"
     get :index
     assert_response :success
     assert_not_nil assigns(:users)
   end
 
   test "should get new" do
+    request.accept = "application/json"
     get :new
     assert_response :success
   end
 
   test "should create user" do
+    request.accept = "application/json"
     assert_difference('User.count') do
       post :create, user: { description: @user.description, email: @user.email, name: @user.name, phone_number: @user.phone_number, zip_code: @user.zip_code }
     end
@@ -25,6 +28,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should show user" do
+    request.accept = "application/json"
     get :show, id: @user
     assert_response :success
   end
@@ -46,4 +50,7 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_redirected_to users_path
   end
+
+
+
 end
