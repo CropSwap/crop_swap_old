@@ -33,3 +33,7 @@ Crop.create!(user_id: 8, crop_type_id: 4, description: "This carrot is delectabl
 Crop.create!(user_id: 9, crop_type_id: 5, description: "This radish is delectable. You want to trade me for this beet.", weight: 30)
 Crop.create!(user_id: 9, crop_type_id: 5, description: "This spinach is delectable. You want to trade me for this beet.", weight: 13)
 Crop.create!(user_id: 9, crop_type_id: 5, description: "This watermelon is delectable. You want to trade me for this beet.", weight: 2)
+
+TradeType.create!(name: "Crops")
+TradeType.create!(name: "Time")
+TradeType.create!(name: "Labor")
